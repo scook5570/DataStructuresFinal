@@ -4,14 +4,16 @@ import java.util.*;
 public class RandomArrPop {
     Random rand = new Random();
 
-    public int[] randIntArr(int[] arr) {
+    public int[] randIntArr(int size) {
+        int[] arr = new int[size];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rand.nextInt(10000);
         }
         return arr;
     }
 
-    public double[] randDoubleArr(double[] arr) {
+    public double[] randDoubleArr(int size) {
+        double[] arr = new double[size];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = rand.nextDouble(10000);
         }
@@ -19,7 +21,8 @@ public class RandomArrPop {
         return arr;
     }
 
-    public String[] randStringArr(String[] arr) {
+    public String[] randStringArr(int size) {
+        String[] arr = new String[size];
         for (int i = 0; i < arr.length; i++) {
             int temp = rand.nextInt(10000);
             arr[i] = Integer.toHexString(temp);
