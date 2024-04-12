@@ -24,4 +24,20 @@ Each array will be passed through twice in sorted and unsorted forms.
 
 Total time will be recorded for each test.
 
-<- Note -> Ask Prof. if she wants three tests done for each type ie: three size 10 random integer arrays
+## Assigned Sections
+
+Samantha Cook:
+~ Main.java
+~ Random Array Generation
+~ Shell Sort
+~ Radix Sort
+
+Emma Leute:
+~ <Name> Sort
+~ <Name> Sort
+~ <Name> Sort
+
+Abbigail Weber:
+~ <Name> Sort
+~ <Name> Sort
+~ <Name> Sort
