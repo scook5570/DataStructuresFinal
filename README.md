@@ -27,17 +27,17 @@ Total time will be recorded for each test.
 ## Assigned Sections
 
 Samantha Cook:
-~ Main.java
-~ Random Array Generation
-~ Shell Sort
-~ Radix Sort
+* Main.java
+* Random Array Generation
+* Shell Sort
+* Radix Sort
 
 Emma Leute:
-~ <Name> Sort
-~ <Name> Sort
-~ <Name> Sort
+* <Name> Sort
+* <Name> Sort
+* <Name> Sort
 
 Abbigail Weber:
-~ <Name> Sort
-~ <Name> Sort
-~ <Name> Sort
+* <Name> Sort
+* <Name> Sort
+* <Name> Sort
