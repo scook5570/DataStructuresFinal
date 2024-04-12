@@ -1,36 +1,44 @@
 package FinalContent;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.Random;
-
-import FinalContent.DataGeneration.RandomArrayGenerator;
+import FinalContent.DataGeneration.*;
 import FinalContent.sortAlgs.*;
 
 public class Main {
-    public static void main(String args[]) throws IllegalAccessException, IllegalArgumentException,
-            InvocationTargetException, NoSuchMethodException, SecurityException {
+    public static void main(String args[]) {
+        int[] arraySizes = { 10, 100, 1000, 10000, 50000, 100000, 500000 };
+        String[] sortTypes = { "Selection", "Bubble", "Insertion", "Merge", "Quick", "Heap", "Shell", "Radix" };
+        RandomArrayGenerator randomArray = new RandomArrayGenerator();
 
-        RandomArrayGenerator randArr = new RandomArrayGenerator();
-        int[] arrSizes = { 10, 100, 1000, 10000, 50000, 100000, 500000 };
+        for (int size : arraySizes) {
+            int[] intArray = randomArray.generateRandomIntArray(size, 0, size);
+            double[] doubleArray = randomArray.generateRandomDoubleArray(size, 0, size);
+            String[] stringArray = randomArray.generateRandomStringArray(size);
 
-        // create csv
-        for (int size : arrSizes) {
-            int[] unsortedArr = randArr.randIntArr(size);
+            Object[] arrays = { intArray, doubleArray, stringArray };
 
-            double bubbleTime = testAlg(Bubble.class, unsortedArr);
+            for (Object array : arrays) {
+                for (String item : sortTypes) {
+                    long start = System.nanoTime();
+                    switch (item) {
+                        case "Selection":
+                            System.out.println("Selection");
+                        case "Bubble":
+                            System.out.println("Bubble");
+                        case "Insertion":
+                            System.out.println("Insertion");
+                        case "Merge":
+                            System.out.println("Merge");
+                        case "Quick":
+                            System.out.println("Quick");
+                    }
+                    System.out.println(System.nanoTime() - start);
+                }
+            }
 
-            // update csv
+            // long start = System.nanoTime();
+            // Radix.radixSort(intArray);
+            // long end = System.nanoTime();
+
         }
-
-        // download csv
-    }
-
-    public static double testAlg(Class<?> sortName, int[] arr) throws IllegalAccessException, IllegalArgumentException,
-            InvocationTargetException, NoSuchMethodException, SecurityException {
-        double start, end;
-        start = System.nanoTime();
-        sortName.getDeclaredMethod(sortName.getSimpleName(), int[].class).invoke(null, arr);
-        end = System.nanoTime();
-        return (end - start);
     }
 }
