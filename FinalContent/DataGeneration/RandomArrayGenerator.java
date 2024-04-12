@@ -5,7 +5,7 @@ import java.util.*;
 public class RandomArrayGenerator {
     static Random random = new Random();
 
-    public static int[] generateRandomIntArray(int size, int min, int max) {
+    public int[] generateRandomIntArray(int size, int min, int max) {
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
             arr[i] = random.nextInt(max - min + 1) + min;
@@ -32,21 +32,24 @@ public class RandomArrayGenerator {
         return arr;
     }
 
-    public static void printArr(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+    public void printArr(int[] arr) {
+        for (int item : arr) {
+            System.out.print(item + " ");
         }
+        System.out.println();
     }
 
-    public static void printArr(double[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+    public void printArr(double[] arr) {
+        for (double item : arr) {
+            System.out.print(item + " ");
         }
+        System.out.println();
     }
 
-    public static void printArr(String[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+    public void printArr(String[] arr) {
+        for (String item : arr) {
+            System.out.print(item + " ");
         }
+        System.out.println();
     }
 }
