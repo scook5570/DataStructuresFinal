@@ -1,30 +1,31 @@
 package FinalContent.DataGeneration;
+
 import java.util.*;
 
-public class RandomArrPop {
-    Random rand = new Random();
+public class RandomArrayGenerator {
+    static Random random = new Random();
 
-    public int[] randIntArr(int size) {
+    public static int[] generateRandomIntArray(int size, int min, int max) {
         int[] arr = new int[size];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextInt(10000);
+        for (int i = 0; i < size; i++) {
+            arr[i] = random.nextInt(max - min + 1) + min;
         }
         return arr;
     }
 
-    public double[] randDoubleArr(int size) {
+    public double[] generateRandomDoubleArray(int size, int min, int max) {
         double[] arr = new double[size];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = rand.nextDouble(10000);
+        for (int i = 0; i < size; i++) {
+            arr[i] = min + (max - min) * random.nextDouble();
         }
 
         return arr;
     }
 
-    public String[] randStringArr(int size) {
+    public String[] generateRandomStringArray(int size) {
         String[] arr = new String[size];
         for (int i = 0; i < arr.length; i++) {
-            int temp = rand.nextInt(10000);
+            int temp = random.nextInt();
             arr[i] = Integer.toHexString(temp);
         }
 
