@@ -5,7 +5,7 @@ import FinalContent.sortAlgs.*;
 
 public class Main {
     public static void main(String args[]) {
-        int[] arraySizes = { 10, 100, 1000, 10000, 50000, 100000, 500000 };
+        int[] arraySizes = { 10, 100 };
         String[] sortTypes = { "Selection", "Bubble", "Insertion", "Merge", "Quick", "Heap", "Shell", "Radix" };
         RandomArrayGenerator randomArray = new RandomArrayGenerator();
 
@@ -21,24 +21,43 @@ public class Main {
                     long start = System.nanoTime();
                     switch (item) {
                         case "Selection":
-                            System.out.println("Selection");
+                            break;
                         case "Bubble":
-                            System.out.println("Bubble");
+                            break;
                         case "Insertion":
-                            System.out.println("Insertion");
+                            break;
                         case "Merge":
-                            System.out.println("Merge");
+                            break;
                         case "Quick":
-                            System.out.println("Quick");
+                            break;
+                        case "Heap":
+                            break;
+                        case "Shell":
+                            break;
+                        case "Radix":
+                            if (array instanceof int[]) {
+                                Radix.radixSort((int[]) array);
+                                for (int number : (int[])array) {
+                                    System.out.println(number + " ");
+                                }
+                            } else if (array instanceof double[]) {
+                                Radix.radixSort((double[]) array); // broken :(
+                                for (double number : (double[])array) { 
+                                    System.out.println(number + " ");
+                                }
+                            } else if (array instanceof String[]) {
+                                Radix.radixSort((String[]) array); // broken fix it later
+                                for (String string : (String[])array) {
+                                    System.out.println(string + " ");
+                                }
+                            }
+                            break;
+                        default:
+                            System.out.println("Error.");
                     }
                     System.out.println(System.nanoTime() - start);
                 }
             }
-
-            // long start = System.nanoTime();
-            // Radix.radixSort(intArray);
-            // long end = System.nanoTime();
-
         }
     }
 }

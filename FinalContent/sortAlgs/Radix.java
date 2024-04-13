@@ -57,10 +57,34 @@ public class Radix {
         }
     }
 
+    public static void countNumbers(double[] arr, double place) {
+        // fix this - sorting by only first few numbers, nothing after decimal
+    }
+
+    public static void countNumbers(String[] arr, int place) {
+        // fill this in later
+    }
+    
     public static void radixSort(int[] arr) {
         int max = getMax(arr);
 
         for (int place = 1; max / place > 0; place *= 10) {
+            countNumbers(arr, place);
+        }
+    }
+
+    public static void radixSort(double[] arr) {
+        double max = getMax(arr);
+
+        for (double place = 1; max / place > 0; place *= 10) { // hmmmmm...
+            countNumbers(arr, place);
+        }
+    }
+
+    public static void radixSort(String[] arr) {
+        String max = getMax(arr);
+    
+        for (int place = 1; place > 0; place *= 10) { // figure this out...
             countNumbers(arr, place);
         }
     }
