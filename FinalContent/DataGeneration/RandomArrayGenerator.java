@@ -23,10 +23,14 @@ public class RandomArrayGenerator {
     }
 
     public String[] generateRandomStringArray(int size) {
+        String lettersAndNumbers = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         String[] arr = new String[size];
         for (int i = 0; i < arr.length; i++) {
-            int temp = random.nextInt();
-            arr[i] = Integer.toHexString(temp);
+            String temp = "";
+            for (int j = 0; j < random.nextInt(15) + 1; j++) {
+                temp = temp.concat(String.valueOf(lettersAndNumbers.charAt(random.nextInt(lettersAndNumbers.length()))));
+            }
+            arr[i] = temp;
         }
 
         return arr;
