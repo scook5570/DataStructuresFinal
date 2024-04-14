@@ -58,7 +58,29 @@ public class Radix {
     }
 
     public static void countNumbers(double[] arr, double place) {
-        // fix this - sorting by only first few numbers, nothing after decimal
+        double[] output = new double[arr.length];
+        int[] tally = new int[10];
+
+        for (int i = 0; i < tally.length; i++) {
+            tally[i] = 0;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            tally[(int)(arr[i] / place) % 10]++;
+        }
+
+        for (int i = 1; i < 10; i++) {
+            tally[i] += tally[i - 1];
+        }
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            output[tally[(int)(arr[i] / place) % 10] - 1] = arr[i];
+            tally[(int)(arr[i] / place) % 10]--;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = output[i];
+        }
     }
 
     public static void countNumbers(String[] arr, int place) {
@@ -76,7 +98,7 @@ public class Radix {
     public static void radixSort(double[] arr) {
         double max = getMax(arr);
 
-        for (double place = 1; max / place > 0; place *= 10) { // hmmmmm...
+        for (double place = 0.00000000000001; max / place > 0.000000000000001; place *= 10) { 
             countNumbers(arr, place);
         }
     }
@@ -84,9 +106,8 @@ public class Radix {
     public static void radixSort(String[] arr) {
         String max = getMax(arr);
     
-        for (int place = 1; place > 0; place *= 10) { // figure this out...
+        for (int place = 1; place > 0; place++ ) { // figure this out...
             countNumbers(arr, place);
         }
     }
-
 }
