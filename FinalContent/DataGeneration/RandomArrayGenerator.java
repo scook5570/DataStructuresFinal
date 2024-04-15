@@ -23,7 +23,7 @@ public class RandomArrayGenerator {
     }
 
     public String[] generateRandomStringArray(int size) {
-        String lettersAndNumbers = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        String lettersAndNumbers = "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
         String[] arr = new String[size];
         for (int i = 0; i < arr.length; i++) {
             String temp = "";
