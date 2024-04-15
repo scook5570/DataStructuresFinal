@@ -39,9 +39,9 @@ Samantha Cook:
 * Radix Sort
 
 Emma Leute:
-* <Name> Sort
-* <Name> Sort
-* <Name> Sort
+* Bubble Sort
+* Quick Sort
+* Insertion Sort
 
 Abbigail Weber:
 * <Name> Sort
