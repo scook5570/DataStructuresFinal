@@ -2,6 +2,12 @@
 
 The purpose of this final is to sort randomly generated arrays with various sorting algorithms.
 
+## Add to Machine
+
+Open VS code in the directory you would like to add this folder to and type:
+
+git clone https://github.com/scook5570/DataStructuresFinal.git
+
 ## Outputs
 
 Running Sort.java will produce a CSV with sorting times for each sorting algorithm type. Three arrays will be produced for each different testing size:
