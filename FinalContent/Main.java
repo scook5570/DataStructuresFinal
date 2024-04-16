@@ -105,7 +105,7 @@ public class Main {
                             System.out.println(item + " " + time);
                             // Write result to the file (csv format)
                             results.write(String.format("%s, %s], %d, %s, %d%n", item, array.getClass().getName(), size,
-                                    unsortSort, time));
+                                    unsortSort, (time - 850))); // - 850 accounts for average switch-case overhead
                         }
 
                         // Restore arrays to their original unsorted state for the next sorting
