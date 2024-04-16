@@ -33,15 +33,15 @@ Total time will be recorded for each test.
 ## Assigned Sections
 
 Samantha Cook:
-* Main.java
-* Random Array Generation
-* Shell Sort
-* Radix Sort
+* Main.java (Waiting on other sorting algorithms)
+* Random Array Generation (Completed)
+* Shell Sort (Completed)
+* Radix Sort (Completed)
 
 Emma Leute:
-* Bubble Sort
-* Quick Sort
-* Insertion Sort
+* Bubble Sort (Completed)
+* Quick Sort (In Progress)
+* Insertion Sort (In Progress)
 
 Abbigail Weber:
 * <Name> Sort
