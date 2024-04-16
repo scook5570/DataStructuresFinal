@@ -58,6 +58,13 @@ public class Main {
                             case "Selection":
                                 break;
                             case "Bubble":
+                            if (array instanceof int[]) {
+                                Bubble.bubbleSort((int[]) array);
+                            } else if (array instanceof double[]) {
+                                Bubble.bubbleSort((double[]) array);
+                            } else if (array instanceof String[]) {
+                                Bubble.bubbleSort((String[]) array);
+                            }
                                 break;
                             case "Insertion":
                                 break;
