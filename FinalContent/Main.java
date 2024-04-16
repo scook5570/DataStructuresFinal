@@ -7,7 +7,7 @@ import FinalContent.sortAlgs.*;
 public class Main {
     public static void main(String args[]) throws IOException {
         // Define array sizes to test
-        int[] arraySizes = { 10, 100, 1000, 10000, 50000, 100000, 500000 };
+        int[] arraySizes = { 10, 100, 1000, 10000, 50000, 100000, 500000 }; //, 1000, 10000, 50000, 100000, 500000 
         // Define sorting algorithms to test
         String[] sortTypes = { "Selection", "Bubble", "Insertion", "Merge", "Quick", "Heap", "Shell", "Radix" };
 
@@ -58,6 +58,13 @@ public class Main {
                             case "Selection":
                                 break;
                             case "Bubble":
+                                if (array instanceof int[]) {
+                                    Bubble.bubbleSort((int[]) array);
+                                } else if (array instanceof double[]) {
+                                    Bubble.bubbleSort((double[]) array);
+                                } else if (array instanceof String[]) {
+                                    Bubble.bubbleSort((String[]) array);
+                                }
                                 break;
                             case "Insertion":
                                 break;
@@ -90,6 +97,8 @@ public class Main {
                         }
                         // Record end time for sorting and calculate duration
                         long end = (System.nanoTime() - start);
+
+                        System.out.println(item + " " + end);
 
                         // Write result to the file (csv format)
                         results.write(String.format("%s, %s], %d, %s, %d%n", item, array.getClass().getName(), size, unsortSort, end));
