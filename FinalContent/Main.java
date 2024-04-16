@@ -7,7 +7,7 @@ import FinalContent.sortAlgs.*;
 public class Main {
     public static void main(String args[]) throws IOException {
         // Define array sizes to test
-        int[] arraySizes = { 10, 100, 1000, 10000, 50000, 100000, 500000 }; //, 1000, 10000, 50000, 100000, 500000 
+        int[] arraySizes = { 10, 100, 1000, 10000, 50000, 100000, 500000 };
         // Define sorting algorithms to test
         String[] sortTypes = { "Selection", "Bubble", "Insertion", "Merge", "Quick", "Heap", "Shell", "Radix" };
 
@@ -57,7 +57,7 @@ public class Main {
                         switch (item) {
                             case "Selection":
                                 break;
-                            case "Bubble":
+                            case "Bubble": // this one will take like 15 minutes at 500000 😵
                                 if (array instanceof int[]) {
                                     Bubble.bubbleSort((int[]) array);
                                 } else if (array instanceof double[]) {
