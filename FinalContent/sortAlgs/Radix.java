@@ -4,6 +4,7 @@ public class Radix {
 
     /**
      * Find the largest integer in the array.
+     * 
      * @param arr - the array of integers
      * @return the maximum value in the array
      */
@@ -19,6 +20,7 @@ public class Radix {
 
     /**
      * Find the largest double in the array.
+     * 
      * @param arr - the array of doubles
      * @return the maximum value in the array
      */
@@ -34,6 +36,7 @@ public class Radix {
 
     /**
      * Find the longest string in the array.
+     * 
      * @param arr - the array of strings
      * @return the longest string in the array
      */
@@ -49,7 +52,8 @@ public class Radix {
 
     /**
      * Perform counting sort on an array of integers based on the specified place.
-     * @param arr - the array of integers
+     * 
+     * @param arr   - the array of integers
      * @param place - the place value (e.g., ones, tens, hundreds)
      */
     public static void countNumbers(int[] arr, int place) {
@@ -85,7 +89,8 @@ public class Radix {
 
     /**
      * Perform counting sort on an array of doubles based on the specified place.
-     * @param arr - the array of doubles
+     * 
+     * @param arr   - the array of doubles
      * @param place - the place value (e.g., 0.1, 0.01, 0.001)
      */
     public static void countNumbers(double[] arr, double place) {
@@ -99,7 +104,7 @@ public class Radix {
 
         // Count occurrences of digits at the specified place
         for (int i = 0; i < arr.length; i++) {
-            tally[(int)(arr[i] / place) % 10]++; // Increment tally for each digit
+            tally[(int) (arr[i] / place) % 10]++; // Increment tally for each digit
         }
 
         // Adjust tally to represent actual positions in the output array
@@ -109,8 +114,8 @@ public class Radix {
 
         // Build output array according to the sorted order
         for (int i = arr.length - 1; i >= 0; i--) {
-            output[tally[(int)(arr[i] / place) % 10] - 1] = arr[i];
-            tally[(int)(arr[i] / place) % 10]--;
+            output[tally[(int) (arr[i] / place) % 10] - 1] = arr[i];
+            tally[(int) (arr[i] / place) % 10]--;
         }
 
         // Update input array with the sorted values
@@ -120,8 +125,10 @@ public class Radix {
     }
 
     /**
-     * Perform counting sort on an array of strings based on the specified character place.
-     * @param arr - the array of strings
+     * Perform counting sort on an array of strings based on the specified character
+     * place.
+     * 
+     * @param arr   - the array of strings
      * @param place - the character index (rightmost to leftmost)
      */
     public static void countNumbers(String[] arr, int place) {
@@ -165,21 +172,23 @@ public class Radix {
     }
 
     /**
-     * Find the index of a character in the string containing numbers and lowercase letters.
+     * Find the index of a character in the string containing numbers and lowercase
+     * letters.
+     * 
      * @param letter - the character to find
      * @return the index of the character
      */
     public static int findVal(char letter) {
         String lettersAndNumbers = "0123456789abcdefghijklmnopqrstuvwxyz";
         int index = 0;
-        while (Character.toLowerCase(letter) != lettersAndNumbers.charAt(index))
- {
+        while (Character.toLowerCase(letter) != lettersAndNumbers.charAt(index)) {
             index++;
         }
         return index;
     }
-    
-    // find the largest int and iterate through 1s, 10s, 100s... right to left, calling countNumbers
+
+    // find the largest int and iterate through 1s, 10s, 100s... right to left,
+    // calling countNumbers
     public static void radixSort(int[] arr) {
         int max = getMax(arr);
 
@@ -189,12 +198,13 @@ public class Radix {
         }
     }
 
-    // find the largest double and iterate through 0.001s, 0.01s, and the like, right to left, calling countNumbers
+    // find the largest double and iterate through 0.001s, 0.01s, and the like,
+    // right to left, calling countNumbers
     public static void radixSort(double[] arr) {
         double max = getMax(arr);
 
         // starts at smallest possible place for double
-        for (double place = 0.00000000000001; max / place > 0.000000000000001; place *= 10) { 
+        for (double place = 0.00000000000001; max / place > 0.000000000000001; place *= 10) {
             countNumbers(arr, place);
         }
     }
