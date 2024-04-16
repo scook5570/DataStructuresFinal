@@ -28,7 +28,11 @@ The arrays will be in the following sizes:
 
 Each array will be passed through twice in sorted and unsorted forms.
 
-Total time will be recorded for each test.
+Total time will be recorded for each test. This process will run three times. A spreadsheet will created from the .txt file and the data will be placed into a graph that represents the following:
+
+* X-Axis: Sorting technique
+* Y-Axis: Total time
+* Line Coloration: Size of the array
 
 ## Assigned Sections
 
