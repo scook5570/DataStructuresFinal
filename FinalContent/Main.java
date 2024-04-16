@@ -28,8 +28,8 @@ public class Main {
             // Loop through each array size
             for (int size : arraySizes) {
                 // Generate random arrays for integers, doubles, and strings
-                int[] intArray = randomArray.generateRandomIntArray(size, 0, size);
-                double[] doubleArray = randomArray.generateRandomDoubleArray(size, 0, size);
+                int[] intArray = randomArray.generateRandomIntArray(size, 0, 10000);
+                double[] doubleArray = randomArray.generateRandomDoubleArray(size, 0, 10000);
                 String[] stringArray = randomArray.generateRandomStringArray(size);
 
                 // Store arrays before sorting for later use
@@ -100,11 +100,12 @@ public class Main {
                                     break;
                             }
                             // Record end time for sorting and calculate duration
-                            long end = (System.nanoTime() - start);
+                            long time = (System.nanoTime() - start);
 
+                            System.out.println(item + " " + time);
                             // Write result to the file (csv format)
                             results.write(String.format("%s, %s], %d, %s, %d%n", item, array.getClass().getName(), size,
-                                    unsortSort, end));
+                                    unsortSort, time));
                         }
 
                         // Restore arrays to their original unsorted state for the next sorting
