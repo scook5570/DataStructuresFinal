@@ -70,6 +70,13 @@ public class Main {
                                     }
                                     break;
                                 case "Insertion":
+                                    if (array instanceof int[]) {
+                                        Insertion.insertionSort((int[]) array);
+                                    } else if (array instanceof double[]) {
+                                        Insertion.insertionSort((double[]) array);
+                                    } else if (array instanceof String[]) {
+                                        Insertion.insertionSort((String[]) array);
+                                    }
                                     break;
                                 case "Merge":
                                     break;
