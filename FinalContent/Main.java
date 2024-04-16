@@ -1,28 +1,57 @@
 package FinalContent;
 
+import java.io.*;
 import FinalContent.DataGeneration.*;
 import FinalContent.sortAlgs.*;
 
 public class Main {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
+        // Define array sizes to test
         int[] arraySizes = { 10, 100, 1000, 10000, 50000, 100000, 500000 };
+        // Define sorting algorithms to test
         String[] sortTypes = { "Selection", "Bubble", "Insertion", "Merge", "Quick", "Heap", "Shell", "Radix" };
+
+        // Create instance of RandomArrayGenerator for generating random arrays
         RandomArrayGenerator randomArray = new RandomArrayGenerator();
+
+        // Variable to store whether the array is sorted or unsorted
+        String unsortSort;
+
+        // FileWriter to write results to a file
+        FileWriter results = new FileWriter("FinalContent/Results/results.txt");
+        // Write header to file (csv format)
+        results.write(String.format("Sort Type, Array Type, Array Size, Sorted/Unsorted, Nanoseconds%n"));
         
+        // Loop through each array size
         for (int size : arraySizes) {
+            // Generate random arrays for integers, doubles, and strings
             int[] intArray = randomArray.generateRandomIntArray(size, 0, size);
             double[] doubleArray = randomArray.generateRandomDoubleArray(size, 0, size);
             String[] stringArray = randomArray.generateRandomStringArray(size);
 
+            // Store arrays before sorting for later use
             int[] intBefore = intArray;
             double[] doubleBefore = doubleArray;
             String[] stringBefore = stringArray;
 
+            // Array containing all three types of arrays for iteration
             Object[] arrays = { intArray, doubleArray, stringArray };
 
-            for (Object array : arrays) { // test each array type
-                for (String item : sortTypes) { // test each sorting type
-                    for (int i = 0; i < 2; i++) { // loop through each sorting type again with sorted array
+            // Loop through each array type (int, double, string)
+            for (Object array : arrays) { 
+                // Loop through each sorting type
+                for (String item : sortTypes) { 
+                    // Loop through each sorting type twice, once unsorted then sorted
+                    for (int i = 0; i < 2; i++) { 
+
+                        // Determine if the array is sorted or unsorted
+                        if (i == 0) {
+                            unsortSort = "Unsorted";
+                        } else {
+                            unsortSort = "Sorted";
+                        }
+
+                        // Record start time for sorting
                         long start = System.nanoTime();
 
                         switch (item) {
@@ -57,18 +86,16 @@ public class Main {
                                 }
                                 break;
                             default:
-                                System.out.println("Error.");
+                                System.out.println("Error...");
                         }
-                        String unsortSort;
-                        if (i == 0) {
-                            unsortSort = "Unsorted";
-                        }  else {
-                            unsortSort = "Sorted";
-                        }
-                            System.out.format("%9s, %6d, %19s], %8s, %10d \n", item, size, array.getClass().getName(), unsortSort, (System.nanoTime() - start));
-                            // System.out.println(item + " [size " + size +  " / " + array.getClass().getName() + " / unsorted]: " + (System.nanoTime() - start));
+                        // Record end time for sorting and calculate duration
+                        long end = (System.nanoTime() - start);
+
+                        // Write result to the file (csv format)
+                        results.write(String.format("%s, %s], %d, %s, %d%n", item, array.getClass().getName(), size, unsortSort, end));
                     }
 
+                    // Restore arrays to their original unsorted state for the next sorting algorithm
                     if (array instanceof int[]) {
                         array = intBefore;
                     } else if (array instanceof double[]) {
@@ -79,5 +106,6 @@ public class Main {
                 } 
             }
         }
+        results.close();
     }
 }
