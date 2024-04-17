@@ -48,6 +48,6 @@ Emma Leute:
 * Insertion Sort (In Progress)
 
 Abbigail Weber:
-* <Name> Sort
-* <Name> Sort
-* <Name> Sort
+* Heap Sort (In Progress)
+* Merge Sort (In Progress)
+* Selection Sort (In Progress)
