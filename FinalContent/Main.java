@@ -109,7 +109,7 @@ public class Main {
                             // Record end time for sorting and calculate duration
                             long time = (System.nanoTime() - start);
 
-                            System.out.println(item + " " + time);
+                            System.out.println(item + " " + size + " " + time);
                             // Write result to the file (csv format)
                             results.write(String.format("%s, %s], %d, %s, %d%n", item, array.getClass().getName(), size,
                                     unsortSort, (time - 850))); // - 850 accounts for average switch-case overhead
