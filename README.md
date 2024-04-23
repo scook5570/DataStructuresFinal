@@ -45,7 +45,7 @@ Samantha Cook:
 Emma Leute:
 * Bubble Sort (Completed)
 * Quick Sort (In Progress)
-* Insertion Sort (In Progress)
+* Insertion Sort (Completed)
 
 Abbigail Weber:
 * Heap Sort (In Progress)
