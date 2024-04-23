@@ -81,6 +81,9 @@ public class Main {
                                 case "Merge":
                                     break;
                                 case "Quick":
+                                    if (array instanceof int[]) {
+                                        Quick.quickSort((int[]) array);
+                                    }
                                     break;
                                 case "Heap":
                                     break;
