@@ -28,9 +28,9 @@ public class Main {
             // Loop through each array size
             for (int size : arraySizes) {
                 // Generate random arrays for integers, doubles, and strings
-                int[] intArray = randomArray.generateRandomIntArray(size, 0, 10000);
-                double[] doubleArray = randomArray.generateRandomDoubleArray(size, 0, 10000);
-                String[] stringArray = randomArray.generateRandomStringArray(size);
+                int[] intArray = randomArray.generateRandomIntArray(size, 0, 10000, i);
+                double[] doubleArray = randomArray.generateRandomDoubleArray(size, 0, 10000, i);
+                String[] stringArray = randomArray.generateRandomStringArray(size, i);
 
                 // Store arrays before sorting for later use
                 int[] intBefore = intArray;
@@ -61,29 +61,29 @@ public class Main {
                                 case "Selection":
                                     break;
                                 case "Bubble": // this one will take like 15 minutes at 500000 😵
-                                    if (array instanceof int[]) {
-                                        Bubble.bubbleSort((int[]) array);
-                                    } else if (array instanceof double[]) {
-                                        Bubble.bubbleSort((double[]) array);
-                                    } else if (array instanceof String[]) {
-                                        Bubble.bubbleSort((String[]) array);
-                                    }
+                                    // if (array instanceof int[]) {
+                                    //     Bubble.bubbleSort((int[]) array);
+                                    // } else if (array instanceof double[]) {
+                                    //     Bubble.bubbleSort((double[]) array);
+                                    // } else if (array instanceof String[]) {
+                                    //     Bubble.bubbleSort((String[]) array);
+                                    // }
                                     break;
                                 case "Insertion":
-                                    if (array instanceof int[]) {
-                                        Insertion.insertionSort((int[]) array);
-                                    } else if (array instanceof double[]) {
-                                        Insertion.insertionSort((double[]) array);
-                                    } else if (array instanceof String[]) {
-                                        Insertion.insertionSort((String[]) array);
-                                    }
+                                    // if (array instanceof int[]) {
+                                    //     Insertion.insertionSort((int[]) array);
+                                    // } else if (array instanceof double[]) {
+                                    //     Insertion.insertionSort((double[]) array);
+                                    // } else if (array instanceof String[]) {
+                                    //     Insertion.insertionSort((String[]) array);
+                                    // }
                                     break;
                                 case "Merge":
                                     break;
                                 case "Quick":
-                                    if (array instanceof int[]) {
-                                        Quick.quickSort((int[]) array);
-                                    }
+                                    // if (array instanceof int[]) {
+                                    //     Quick.quickSort((int[]) array);
+                                    // }
                                     break;
                                 case "Heap":
                                     break;
@@ -112,6 +112,7 @@ public class Main {
                             // Record end time for sorting and calculate duration
                             long time = (System.nanoTime() - start);
 
+                            if (item.equals("Radix") || item.equals("Shell"))
                             System.out.println(item + " " + size + " " + time);
                             // Write result to the file (csv format)
                             results.write(String.format("%s, %s], %d, %s, %d%n", item, array.getClass().getName(), size,

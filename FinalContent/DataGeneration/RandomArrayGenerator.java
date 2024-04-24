@@ -5,28 +5,30 @@ import java.util.*;
 // hello test commit
 
 public class RandomArrayGenerator {
-    static Random random = new Random();
+    static Random random;
 
-    public int[] generateRandomIntArray(int size, int min, int max) {
+    public int[] generateRandomIntArray(int size, int min, int max, int seed) {
         int[] arr = new int[size];
+        random = new Random(seed);
         for (int i = 0; i < size; i++) {
             arr[i] = random.nextInt(max - min + 1) + min;
         }
         return arr;
     }
 
-    public double[] generateRandomDoubleArray(int size, int min, int max) {
+    public double[] generateRandomDoubleArray(int size, int min, int max, int seed) {
         double[] arr = new double[size];
+        random = new Random(seed);
         for (int i = 0; i < size; i++) {
             arr[i] = min + (max - min) * random.nextDouble();
         }
-
         return arr;
     }
 
-    public String[] generateRandomStringArray(int size) {
+    public String[] generateRandomStringArray(int size, int seed) {
         String lettersAndNumbers = "0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
         String[] arr = new String[size];
+        random = new Random(seed);
         for (int i = 0; i < arr.length; i++) {
             String temp = "";
             for (int j = 0; j < random.nextInt(15) + 1; j++) {
@@ -34,7 +36,6 @@ public class RandomArrayGenerator {
             }
             arr[i] = temp;
         }
-
         return arr;
     }
 
