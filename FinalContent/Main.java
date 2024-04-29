@@ -83,7 +83,12 @@ public class Main {
                                 case "Quick":
                                     if (array instanceof int[]) {
                                         Quick.quickSort((int[]) array);
+                                    } else if (array instanceof double[]) {
+                                        Quick.quickSort((double[]) array);
+                                    } else if (array instanceof String[]) {
+                                        Quick.quickSort((String[]) array);
                                     }
+
                                     break;
                                 case "Heap":
                                     break;
