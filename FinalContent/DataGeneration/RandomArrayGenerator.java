@@ -36,8 +36,10 @@ public class RandomArrayGenerator {
             String temp = "";
             // Generate a random string of length between 1 and 15 characters
             for (int j = 0; j < random.nextInt(15) + 1; j++) {
-                // Append random characters from the lettersAndNumbers string to form the random string
-                temp = temp.concat(String.valueOf(lettersAndNumbers.charAt(random.nextInt(lettersAndNumbers.length()))));
+                // Append random characters from the lettersAndNumbers string to form the random
+                // string
+                temp = temp
+                        .concat(String.valueOf(lettersAndNumbers.charAt(random.nextInt(lettersAndNumbers.length()))));
             }
             arr[i] = temp; // Assign the generated string to the array
         }
