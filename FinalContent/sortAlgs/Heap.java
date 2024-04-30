@@ -1,6 +1,6 @@
 package FinalContent.sortAlgs;
  
-public class FinalHeap {
+public class Heap {
 
     public static void heap(int arr[], int N, int i) {
         int minValue = i;
