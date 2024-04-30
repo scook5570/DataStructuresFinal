@@ -2,7 +2,7 @@ package FinalContent.sortAlgs;
 
 public class Merge {
 
-    void merge(int arr[], int l, int r, int m) {
+    void mergeSort(int arr[], int l, int r, int m) {
         int n1 = m - l + 1;
         int n2 = r - m;
         int L[] = new int[n1];
@@ -42,7 +42,7 @@ public class Merge {
         }
     }
 
-    void merge(double arr[], int l, int r, int m) {
+    void mergeSort(double arr[], int l, int r, int m) {
         int n1 = m - l + 1;
         int n2 = r - m;
         double L[] = new double[n1];
@@ -81,7 +81,7 @@ public class Merge {
         }
     }
 
-    void merge(String arr[], int l, int r, int m) {
+    void mergeSort(String arr[], int l, int r, int m) {
         int n1 = m - l + 1;
         int n2 = r - m;
         String L[] = new String[n1];
