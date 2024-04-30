@@ -59,6 +59,13 @@ public class Main {
 
                             switch (item) {
                                 case "Selection":
+                                     if (array instanceof int[]) {
+                                        Selection.selectionSort((int[]) array);
+                                    } else if (array instanceof double[]) {
+                                        Selection.selectionSort((double[]) array);
+                                    } else if (array instanceof String[]) {
+                                        Selection.selectionSort((String[]) array);
+                                    }
                                     break;
                                 case "Bubble": // this one will take like 15 minutes at 500000 😵
                                     if (array instanceof int[]) {
@@ -98,6 +105,13 @@ public class Main {
 
                                     break;
                                 case "Heap":
+                                     if (array instanceof int[]) {
+                                        Heap.heapSort((int[]) array);
+                                    } else if (array instanceof double[]) {
+                                        Heap.heapSort((double[]) array);
+                                    } else if (array instanceof String[]) {
+                                        Heap.heapSort((String[]) array);
+                                    }
                                     break;
                                 case "Shell":
                                     if (array instanceof int[]) {
