@@ -79,6 +79,13 @@ public class Main {
                                     }
                                     break;
                                 case "Merge":
+                                     if (array instanceof int[]) {
+                                        Merge.mergeSort((int[]) array);
+                                    } else if (array instanceof double[]) {
+                                        Merge.mergeSort((double[]) array);
+                                    } else if (array instanceof String[]) {
+                                        Merge.mergeSort((String[]) array);
+                                    }
                                     break;
                                 case "Quick":
                                     if (array instanceof int[]) {
