@@ -2,7 +2,7 @@ package FinalContent.sortAlgs;
  
 public class Heap {
 
-    public static void heap(int arr[], int N, int i) {
+    public static void heapSort(int arr[], int N, int i) {
         int minValue = i;
         int l = 2 * i + 1;
         int r = 2 * i + 2;
@@ -25,7 +25,7 @@ public class Heap {
         }
     }
 
-    public static void heap(double arr[], int N, int i) {
+    public static void heapSort(double arr[], int N, int i) {
         int minValue = i;
         int l = 2 * i + 1;
         int r = 2 * i + 2;
@@ -48,7 +48,7 @@ public class Heap {
         }
     }
 
-    public static void heap(String arr[], int N, int i) {
+    public static void heapSort(String arr[], int N, int i) {
         int minValue = i;
         int l = 2 * i + 1;
         int r = 2 * i + 2;
