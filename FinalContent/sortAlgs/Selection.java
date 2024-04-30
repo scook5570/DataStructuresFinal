@@ -3,7 +3,7 @@ package FinalContent.sortAlgs;
   
 public class Selection {
     
-    void sort(int arr[])
+    void selectionSort(int arr[])
     {
         int n = arr.length;
         for (int i = 0; i < n-1; i++)
@@ -19,7 +19,7 @@ public class Selection {
         }
     }
 
-    void sort(double arr[])
+    void selectionSort(double arr[])
     {
         int n = arr.length;
         for (int i = 0; i < n-1; i++)
@@ -35,7 +35,7 @@ public class Selection {
         }
     }
     
-    void sort(String arr[])
+    void selectionSort(String arr[])
     {
         int n = arr.length;
         for (int i = 0; i < n-1; i++)
