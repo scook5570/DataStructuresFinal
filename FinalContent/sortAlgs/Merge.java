@@ -1,6 +1,6 @@
 package FinalContent.sortAlgs;
 
-public class FinalMerge {
+public class Merge {
 
     void merge(int arr[], int l, int r, int m) {
         int n1 = m - l + 1;
