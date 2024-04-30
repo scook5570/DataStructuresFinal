@@ -1,7 +1,7 @@
 package FinalContent.sortAlgs;
  
   
-public class FinalSelection {
+public class Selection {
     
     void sort(int arr[])
     {
